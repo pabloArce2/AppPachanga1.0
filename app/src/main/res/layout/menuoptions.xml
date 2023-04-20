@@ -7,4 +7,43 @@
     tools:context=".MenuOptions"
     android:background="@color/yellow">
 
+    <Button
+        android:id="@+id/plus_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/oval_button"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162" />
+
+    <Button
+        android:id="@+id/m_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/oval_button"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.162" />
+
+    <TextView
+        android:id="@+id/numberOfTeams"
+        android:fontFamily="@font/ubuntu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of teams: "
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.170" />
 </androidx.constraintlayout.widget.ConstraintLayout>
