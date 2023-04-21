@@ -1,6 +1,6 @@
 package com.example.teammaker
 
-class team(private var nPlayer: Int) {
+class Team(private var nPlayer: Int) {
     private var players = ArrayList<String>()
 
     fun addPlayer(name: String) {
