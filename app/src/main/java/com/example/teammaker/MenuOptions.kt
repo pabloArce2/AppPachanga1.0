@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import org.w3c.dom.Text
 
 
 class MenuOptions : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.menuoptions)
@@ -19,6 +19,7 @@ class MenuOptions : AppCompatActivity() {
         var plusButton = findViewById<Button>(R.id.plus_button)
         var minusButton = findViewById<Button>(R.id.m_button)
         var titleEditTextView = findViewById<TextView>(R.id.titleEditText)
+        var playerSeekBar = findViewById<SeekBar>(R.id.playerSeekbar)
         var register = Register();
 
         val bundle: Bundle? = intent.extras
@@ -44,10 +45,26 @@ class MenuOptions : AppCompatActivity() {
                 updateNumberOfTeamsText(numberOfTeamsTextView, register.getNTeams())
             }
         }
+
+        playerSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+                register.setNPlayer(progress)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar) {
+                // TODO Auto-generated method stub
+            }
+        })
     }
 
     private fun updateNumberOfTeamsText(numberOfTeamsTextView: TextView, nTeams: Int?) {
         var text1 = getString(R.string.NoT) + " "+ nTeams;
         numberOfTeamsTextView.text = text1
     }
+
+
 }

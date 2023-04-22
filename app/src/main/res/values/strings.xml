@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">TeamMaker</string>
     <string name="button1">Start</string>
-    <string name="NoT">Number of teams:  </string>
+    <string name="NoT">Teams:</string>
 </resources>

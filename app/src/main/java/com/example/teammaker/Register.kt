@@ -1,20 +1,15 @@
 package com.example.teammaker
-import android.os.Parcel
-import android.os.Parcelable
 
-class Register() : Parcelable {
+class Register(){
     private var nTeams : Int = 0;
     private var teams = ArrayList<Team>();
     private var name : String? = "";
-
-    constructor(parcel: Parcel) : this() {
-        name = parcel.readString()
-    }
+    private var nPlayers : Int = 0;
 
     fun addTeam(team: Team) {
         this.teams.add(team);
     }
-    fun getPlayer(pos: Int): Team {
+    fun getTeam(pos: Int): Team {
         return teams[pos];
     }
     fun getNTeams(): Int? {
@@ -33,23 +28,11 @@ class Register() : Parcelable {
     fun setName(name : String){
         this.name = name;
     }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(nTeams)
-        parcel.writeString(name)
+    fun setNPlayer(nPlayers: Int) {
+        this.nPlayers = nPlayers;
+    }
+    fun getNPlayer(): Int {
+        return nPlayers;
     }
 
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Register> {
-        override fun createFromParcel(parcel: Parcel): Register {
-            return Register(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Register?> {
-            return arrayOfNulls(size)
-        }
-    }
 }
