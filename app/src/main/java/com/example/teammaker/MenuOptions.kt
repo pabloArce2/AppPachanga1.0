@@ -3,6 +3,7 @@ package com.example.teammaker
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
@@ -21,6 +22,7 @@ class MenuOptions : AppCompatActivity() {
         var titleEditTextView = findViewById<TextView>(R.id.titleEditText)
         var playerSeekBar = findViewById<SeekBar>(R.id.playerSeekbar)
         var register = Register();
+        var numberOfPlayers = findViewById<TextView>(R.id.numberOfPlayers)
 
         val bundle: Bundle? = intent.extras
         if (bundle != null) {
@@ -49,14 +51,15 @@ class MenuOptions : AppCompatActivity() {
         playerSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 register.setNPlayer(progress)
+                numberOfPlayers.text = register.getNPlayer().toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
+                numberOfPlayers.visibility = View.VISIBLE
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
+                numberOfPlayers.visibility = View.VISIBLE
             }
         })
     }
