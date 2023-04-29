@@ -59,6 +59,8 @@
         android:fontFamily="@font/ubuntu"
         android:hint="Enter the name"
         android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:maxLength="20"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

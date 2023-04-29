@@ -21,6 +21,14 @@ class MainActivity : AppCompatActivity() {
 
         entryButton.setOnClickListener {
             val name : String = nameEditText.text.toString()
+            if (name == ""){
+                nameEditText.error = "Please enter your name"
+                return@setOnClickListener
+            }
+            if (name.length <= 3){
+                nameEditText.error = "The name needs to be longer than 3 characters"
+                return@setOnClickListener
+            }
 
             val intent = Intent(this, MenuOptions::class.java)
             val bundle = Bundle().apply { putString("name", name) }
