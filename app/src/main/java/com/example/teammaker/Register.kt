@@ -1,7 +1,7 @@
 package com.example.teammaker
 
 class Register(){
-    private var nTeams : Int = 0;
+    private var nTeams : Int = 1;
     private var teams = ArrayList<Team>();
     private var name : String? = "";
     private var nPlayers : Int = 0;

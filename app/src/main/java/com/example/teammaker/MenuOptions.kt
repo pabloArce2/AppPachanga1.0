@@ -1,14 +1,12 @@
 package com.example.teammaker
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import android.widget.Toast
-import org.w3c.dom.Text
+import android.widget.*
+import com.google.android.material.tabs.TabLayout
+import androidx.viewpager.widget.ViewPager
 
 
 class MenuOptions : AppCompatActivity() {
@@ -23,6 +21,9 @@ class MenuOptions : AppCompatActivity() {
         var playerSeekBar = findViewById<SeekBar>(R.id.playerSeekbar)
         var register = Register();
         var numberOfPlayers = findViewById<TextView>(R.id.numberOfPlayers)
+        var generateButton = findViewById<Button>(R.id.generateButton)
+        var containerLayout = findViewById<LinearLayout>(R.id.container_layout)
+
 
         val bundle: Bundle? = intent.extras
         if (bundle != null) {
@@ -39,12 +40,14 @@ class MenuOptions : AppCompatActivity() {
             else {
                 register.plusTeam()
                 updateNumberOfTeamsText(numberOfTeamsTextView, register.getNTeams())
+                updateMaxPlayers(playerSeekBar, register.getNTeams())
             }
         }
         minusButton.setOnClickListener {
-            if (register.getNTeams()!! > 0){
+            if (register.getNTeams()!! > 1){
                 register.minusTeam()
                 updateNumberOfTeamsText(numberOfTeamsTextView, register.getNTeams())
+                updateMaxPlayers(playerSeekBar, register.getNTeams())
             }
         }
 
@@ -62,11 +65,27 @@ class MenuOptions : AppCompatActivity() {
                 numberOfPlayers.visibility = View.VISIBLE
             }
         })
+
+        generateButton.setOnClickListener {
+            val nTeam = register.getNTeams();
+
+            val tabLayout = TabLayout(this)
+            val viewPager = ViewPager(this)
+            val adapter = TeamPagerAdapter(supportFragmentManager, nTeam!!)
+            viewPager.adapter = adapter
+            tabLayout.setupWithViewPager(viewPager)
+
+            containerLayout.addView(tabLayout)
+            containerLayout.addView(viewPager)
+        }
     }
 
     private fun updateNumberOfTeamsText(numberOfTeamsTextView: TextView, nTeams: Int?) {
         var text1 = getString(R.string.NoT) + " "+ nTeams;
         numberOfTeamsTextView.text = text1
+    }
+    private fun updateMaxPlayers(playerSeekBar: SeekBar, nTeams: Int?) {
+        playerSeekBar.max = nTeams!! * 11
     }
 
 
