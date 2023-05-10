@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/dark1" />
+    <View
+        android:id="@+id/view5"
+        android:background="@color/dark2"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_below="@+id/view1"
+        />
+
+    <View
+        android:id="@+id/view2"
+        android:background="@color/yellow"
+        android:layout_width="130dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        />
+    <View
+        android:id="@+id/view3"
+        android:background="@color/yellow"
+        android:layout_width="230dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@id/view2"
+        android:layout_below="@id/view1"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp" />
+    <View
+        android:id="@+id/view4"
+        android:background="@color/yellow"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@id/view2"
+        android:layout_margin="20dp" />
+    <View
+        android:id="@+id/view6"
+        android:layout_below="@id/view5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark3" />
+    <View
+        android:id="@+id/view7"
+        android:layout_below="@id/view5"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:background="@color/teal_200"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="75dp"/>
+    <View
+        android:id="@+id/view8"
+        android:layout_below="@id/view5"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:background="@color/teal_200"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="75dp"/>
+    <View
+        android:id="@+id/view9"
+        android:layout_below="@id/view8"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:background="@color/teal_200"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="220dp"
+        android:layout_alignBottom="@id/view7"/>
+
+
+
+
+
+</RelativeLayout>
