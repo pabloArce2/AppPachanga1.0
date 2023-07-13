@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
         android:text="Team Maker"
+        android:textColor="@color/dark1"
         android:textSize="48dp"
         android:textStyle="bold"
-        android:textColor="@color/dark1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.266" />
 
@@ -28,9 +28,9 @@
         android:layout_height="200dp"
         android:src="@drawable/equipo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nameEditText"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nameEditText"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.444" />
 
@@ -51,21 +51,21 @@
 
     <EditText
         android:id="@+id/nameEditText"
-        android:singleLine="true"
-        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/textview_background"
-        android:fontFamily="@font/ubuntu"
-        android:hint="Enter the name"
-        android:padding="10dp"
         android:drawablePadding="10dp"
+        android:fontFamily="@font/ubuntu"
+        android:gravity="center"
+        android:hint="Enter the name"
         android:maxLength="20"
+        android:padding="10dp"
+        android:singleLine="true"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/entry"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/entry"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.67" />
 
