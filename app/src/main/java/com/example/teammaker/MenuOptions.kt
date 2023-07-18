@@ -1,6 +1,7 @@
 package com.example.teammaker
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,6 +24,7 @@ class MenuOptions : AppCompatActivity() {
         var playerSeekBar = findViewById<SeekBar>(R.id.playerSeekbar)
         var register = Register();
         var numberOfPlayers = findViewById<TextView>(R.id.numberOfPlayers)
+        var test_button = findViewById<android.widget.Button>(R.id.test_button)
 
         val bundle: Bundle? = intent.extras
         if (bundle != null) {
@@ -62,6 +64,11 @@ class MenuOptions : AppCompatActivity() {
                 numberOfPlayers.visibility = View.VISIBLE
             }
         })
+
+        test_button.setOnClickListener{
+            val intent = Intent(this, Test::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun updateNumberOfTeamsText(numberOfTeamsTextView: TextView, nTeams: Int?) {

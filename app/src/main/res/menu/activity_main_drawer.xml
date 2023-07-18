@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/nav_item_new"
+            android:icon="@drawable/ic_new_file"
+            android:title="New note">
+        </item>
+        <item android:id="@+id/nav_item_lock"
+            android:icon="@drawable/ic_lock_file"
+            android:title="Private">
+        </item>
+        <item android:id="@+id/nav_item_share"
+            android:icon="@drawable/ic_share"
+            android:title="Share">
+        </item>
+    </group>
+
+    <item
+        android:title="Account">
+        <menu>
+            <item
+                android:id = "@+id/nav_item_clearpreferences"
+                android:icon="@drawable/ic_new_file"
+                android:title="Clear preferences">
+            </item>
+            <item android:id="@+id/nav_item_signout"
+                android:icon="@drawable/ic_lock_file"
+                android:title="Sign out">
+            </item>
+        </menu>
+    </item>
+    <item
+        android:title="Anuncios">
+        <menu>
+            <item
+                android:id = "@+id/nav_item_adds"
+                android:icon="@drawable/ic_new_file"
+                android:title="Check my other apps">
+            </item>
+        </menu>
+    </item>
+</menu>
